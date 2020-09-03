@@ -3,5 +3,10 @@
   "dest": "../../dist/demo-form",
   "lib": {
     "entryFile": "src/public-api.ts"
-  }
+  },
+  "whitelistedNonPeerDependencies": [
+    "@angular-devkit/schematics",
+    "@angular/cdk",
+    "schematics-utilities"
+  ]
 }
