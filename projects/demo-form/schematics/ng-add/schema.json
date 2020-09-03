@@ -5,6 +5,13 @@
   "type": "object",
   "description": "add ngx-validators and import ReactiveFormsModule",
   "properties": {
+    "project": {
+      "type": "string",
+      "description": "The name of the project.",
+      "$default": {
+        "$source": "projectName"
+      }
+    },
     "name": {
       "type": "string",
       "description": "input your name",

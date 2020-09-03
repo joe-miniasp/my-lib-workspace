@@ -16,7 +16,7 @@ export function ngAdd(options: Schema): Rule {
     const workspace = getWorkspace(tree);
     const project = getProjectFromWorkspace(
       workspace,
-      workspace.defaultProject
+      options.project || workspace.defaultProject
     ) as WorkspaceProject;
 
     // 建立個人資料 user-info
