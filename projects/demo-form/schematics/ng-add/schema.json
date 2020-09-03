@@ -1,0 +1,51 @@
+{
+  "$schema": "http://json-schema.org/schema",
+  "id": "app-ng-add",
+  "title": "ng-add schematic",
+  "type": "object",
+  "description": "add ngx-validators and import ReactiveFormsModule",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "input your name",
+      "x-prompt": "請輸入你的名子",
+      "$default": {
+        "$source": "argv",
+        "index": 0
+      }
+    },
+    "department": {
+      "type": "string",
+      "description": "input your sex",
+      "x-prompt": {
+        "message": "請選擇你的部門",
+        "type": "list",
+        "items": [
+          {
+            "value": "研發部門",
+            "label": "RD Department"
+          },
+          {
+            "value": "資訊科技部門",
+            "label": "IT Department"
+          }
+        ]
+      }
+    },
+    "isInstallNgxvalidators": {
+      "type": "boolean",
+      "description": "Add ngx-validators in project",
+      "default": true,
+      "x-prompt": "請問是否需要安裝 ngx-validators 套件?"
+    },
+    "isImportReactiveForms": {
+      "type": "boolean",
+      "description": "Import ReactiveFormsModule",
+      "default": false,
+      "x-prompt": "請問是否需要引入 ReactiveFormsModule 到 AppModule?"
+    }
+  },
+  "required": [
+    "name"
+  ]
+}
