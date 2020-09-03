@@ -19,17 +19,17 @@ export function ngAdd(options: Schema): Rule {
       workspace.defaultProject
     ) as WorkspaceProject;
 
-    // 建立個人資料 user-info.txt
-    const userInfo = '開發人員 ' + options.name + ' 隸屬於 ' + options.department;
-    tree.create('user-info.txt', userInfo);
+    // 建立個人資料 user-info
+    const userInfo =
+      '開發人員 ' + options.name + ' 隸屬於 ' + options.department;
+
+    // 檢查 user-info.txt 是否已存在，存在則複寫檔案，不存在則建立檔案
+    tree.exists('user-info.txt')
+      ? tree.overwrite('user-info.txt', userInfo)
+      : tree.create('user-info.txt', userInfo);
 
     // import DemoFormModule 到 AppModule
-    addModuleImportToRootModule(
-      tree,
-      'DemoFormModule',
-      'demo-form',
-      project
-    );
+    addModuleImportToRootModule(tree, 'DemoFormModule', 'demo-form', project);
 
     // 是否安裝 ngx-validators 套件
     if (options.isInstallNgxvalidators) {
