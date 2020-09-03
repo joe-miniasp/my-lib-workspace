@@ -163,6 +163,127 @@
           }
         }
       }
+    },
+    "test-schematics": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      },
+      "root": "projects/test-schematics",
+      "sourceRoot": "projects/test-schematics/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/test-schematics",
+            "index": "projects/test-schematics/src/index.html",
+            "main": "projects/test-schematics/src/main.ts",
+            "polyfills": "projects/test-schematics/src/polyfills.ts",
+            "tsConfig": "projects/test-schematics/tsconfig.app.json",
+            "aot": true,
+            "assets": [
+              "projects/test-schematics/src/favicon.ico",
+              "projects/test-schematics/src/assets"
+            ],
+            "styles": [
+              "projects/test-schematics/src/styles.scss"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/test-schematics/src/environments/environment.ts",
+                  "with": "projects/test-schematics/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "test-schematics:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "test-schematics:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "test-schematics:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/test-schematics/src/test.ts",
+            "polyfills": "projects/test-schematics/src/polyfills.ts",
+            "tsConfig": "projects/test-schematics/tsconfig.spec.json",
+            "karmaConfig": "projects/test-schematics/karma.conf.js",
+            "assets": [
+              "projects/test-schematics/src/favicon.ico",
+              "projects/test-schematics/src/assets"
+            ],
+            "styles": [
+              "projects/test-schematics/src/styles.scss"
+            ],
+            "scripts": []
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/test-schematics/tsconfig.app.json",
+              "projects/test-schematics/tsconfig.spec.json",
+              "projects/test-schematics/e2e/tsconfig.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        },
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "projects/test-schematics/e2e/protractor.conf.js",
+            "devServerTarget": "test-schematics:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "test-schematics:serve:production"
+            }
+          }
+        }
+      }
     }},
   "defaultProject": "my-lib-workspace"
 }
