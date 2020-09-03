@@ -23,6 +23,14 @@ export function ngAdd(options: Schema): Rule {
     const userInfo = '開發人員 ' + options.name + ' 隸屬於 ' + options.department;
     tree.create('user-info.txt', userInfo);
 
+    // import DemoFormModule 到 AppModule
+    addModuleImportToRootModule(
+      tree,
+      'DemoFormModule',
+      'demo-form',
+      project
+    );
+
     // 是否安裝 ngx-validators 套件
     if (options.isInstallNgxvalidators) {
       addPackageJsonDependency(tree, {
@@ -32,7 +40,7 @@ export function ngAdd(options: Schema): Rule {
       });
     }
 
-    // 是否 import ReactiveFormsModule
+    // 是否 import ReactiveFormsModule 到 AppModule
     if (options.isImportReactiveForms) {
       addModuleImportToRootModule(
         tree,
