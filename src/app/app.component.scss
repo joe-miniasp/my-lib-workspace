@@ -1,0 +1,15 @@
+.wrapper{
+  display: flex;
+  flex-flow: row;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+
+  .fb-form {
+    box-sizing: border-box;
+    margin: 10px;
+    height: 300px;
+    width: 400px;
+  }
+
+}
