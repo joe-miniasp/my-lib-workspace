@@ -5,8 +5,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-
-import { DemoFormModule } from 'demo-form';
+import { DemoFormModule } from 'projects/demo-form/src/lib/demo-form.module';
 
 @NgModule({
   declarations: [
