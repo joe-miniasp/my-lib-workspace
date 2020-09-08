@@ -16,7 +16,7 @@
     },
     "department": {
       "type": "string",
-      "description": "input your sex",
+      "description": "input your department",
       "x-prompt": {
         "message": "請選擇你的部門",
         "type": "list",
