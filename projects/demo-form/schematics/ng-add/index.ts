@@ -36,7 +36,7 @@ export default function ngAdd(options: Schema): Rule {
     addModuleImportToRootModule(tree, 'DemoFormModule', 'demo-form', project);
 
     // 是否安裝 ngx-validators 套件
-    if (options.isInstallNgxvalidators) {
+    if (options.isInstallNgxValidators) {
       addPackageJsonDependency(tree, {
         type: NodeDependencyType.Default,
         version: '5.2.1',
