@@ -13,7 +13,11 @@ import {
 // Just return the tree
 export function ngAdd(options: Schema): Rule {
   return (tree: Tree) => {
+
+    // 取得 angular.json 內容
     const workspace = getWorkspace(tree);
+
+    // 取得 angular.json projects 的 其中一個 project
     const project = getProjectFromWorkspace(
       workspace,
       options.project || workspace.defaultProject
