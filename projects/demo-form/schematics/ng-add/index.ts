@@ -11,7 +11,7 @@ import {
 } from 'schematics-utilities';
 
 // Just return the tree
-export function ngAdd(options: Schema): Rule {
+export default function ngAdd(options: Schema): Rule {
   return (tree: Tree) => {
 
     // 取得 angular.json 內容
