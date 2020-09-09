@@ -3,6 +3,7 @@
   "id": "loginForm",
   "title": "Login Form Options Schema",
   "type": "object",
+  "description": "creat a login form",
   "properties": {
     "path": {
       "type": "string",
