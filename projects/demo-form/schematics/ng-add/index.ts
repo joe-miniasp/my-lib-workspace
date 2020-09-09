@@ -1,4 +1,3 @@
-import { Schema } from './schema';
 import { Rule, Tree } from '@angular-devkit/schematics';
 
 import {
@@ -9,6 +8,8 @@ import {
   getWorkspace,
   WorkspaceProject,
 } from 'schematics-utilities';
+
+import { Schema } from './schema';
 
 // Just return the tree
 export default function ngAdd(options: Schema): Rule {

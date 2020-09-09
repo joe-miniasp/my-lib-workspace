@@ -1,7 +1,7 @@
 import { chain, Rule } from '@angular-devkit/schematics';
 import { buildComponent } from '@angular/cdk/schematics';
 
-export default function loginForm(options: any): Rule {
+export function loginForm(options: any): Rule {
   return chain([
     buildComponent(
       { ...options },

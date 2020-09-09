@@ -8,7 +8,7 @@
     },
     "loginForm":{
       "description": "Create a component with a login form",
-      "factory": "./ng-generate/login-form",
+      "factory": "./ng-generate/login-form/index#loginForm",
       "schema": "./ng-generate/login-form/schema.json",
       "aliases": ["login-form"]
     }
