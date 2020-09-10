@@ -7,6 +7,9 @@ import { FormBuilder } from '@angular/forms';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
+
+  version = 'v.2020.9.10';
+
   loginForm = this.fb.group({
     account: '',
     password: '',

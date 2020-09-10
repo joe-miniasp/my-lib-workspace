@@ -13,6 +13,9 @@ import { FormBuilder } from '@angular/forms';
   styleUrls: ['./<%= dasherize(name) %>.component.<%= style %>']<% } %>
 })
 export class <%= classify(name) %>Component {
+
+  version = '<%=getVersion()%>';
+
   loginForm = this.fb.group({
     account: '',
     password: '',

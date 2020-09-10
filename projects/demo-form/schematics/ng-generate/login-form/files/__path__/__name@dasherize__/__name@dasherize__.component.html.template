@@ -3,5 +3,6 @@
     <lib-fb-input placeholder="帳號"  formControlName="account"></lib-fb-input>
     <lib-fb-password-input placeholder="密碼"  formControlName="password"></lib-fb-password-input>
     <lib-fb-button (buttonClick)="login()">登入</lib-fb-button>
+    <div class="version">{{ version }}</div>
   </form>
 </div>
