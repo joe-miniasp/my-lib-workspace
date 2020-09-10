@@ -47,7 +47,6 @@ export default function ngAdd(options: Schema): Rule {
         version: '5.2.1',
         name: 'ngx-validators',
       });
-      console.log('安裝 ngx-validators 套件');
     }
 
     // 是否 import ReactiveFormsModule 到 AppModule
