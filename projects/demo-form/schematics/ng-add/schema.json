@@ -32,7 +32,7 @@
         ]
       }
     },
-    "isInstallNgxvalidators": {
+    "isInstallNgxValidators": {
       "type": "boolean",
       "description": "Add ngx-validators in project",
       "default": true,

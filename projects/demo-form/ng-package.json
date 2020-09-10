@@ -7,6 +7,6 @@
   "whitelistedNonPeerDependencies": [
     "@angular-devkit/schematics",
     "@angular/cdk",
-    "schematics-utilities"
+    "@schematics/angular"
   ]
 }

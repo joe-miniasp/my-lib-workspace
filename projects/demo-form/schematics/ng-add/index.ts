@@ -1,20 +1,24 @@
 import { Rule, Tree } from '@angular-devkit/schematics';
 
 import {
-  addPackageJsonDependency,
-  NodeDependencyType,
   addModuleImportToRootModule,
   getProjectFromWorkspace,
-  getWorkspace,
-  WorkspaceProject,
-} from 'schematics-utilities';
+} from '@angular/cdk/schematics';
+
+import {
+  NodeDependencyType,
+  addPackageJsonDependency,
+} from '@schematics/angular/utility/dependencies';
+
+import {getWorkspace} from '@schematics/angular/utility/config';
+import { WorkspaceProject } from '@schematics/angular/utility/workspace-models';
 
 import { Schema } from './schema';
 
 // Just return the tree
 export default function ngAdd(options: Schema): Rule {
+  console.log(options);
   return (tree: Tree) => {
-
     // 取得 angular.json 內容
     const workspace = getWorkspace(tree);
 
@@ -43,6 +47,7 @@ export default function ngAdd(options: Schema): Rule {
         version: '5.2.1',
         name: 'ngx-validators',
       });
+      console.log('安裝 ngx-validators 套件');
     }
 
     // 是否 import ReactiveFormsModule 到 AppModule
