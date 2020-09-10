@@ -1,4 +1,4 @@
-import { TestBed, async } from '@angular/core/testing';
+import { TestBed, waitForAsync } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { ReactiveFormsModule } from '@angular/forms';
 
@@ -7,16 +7,17 @@ import { AppComponent } from './app.component';
 import { DemoFormModule } from 'demo-form';
 
 describe('AppComponent', () => {
-  beforeEach(async(() => {
+
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
+      declarations: [
+        AppComponent
+      ],
       imports: [
         RouterTestingModule,
         ReactiveFormsModule,
         DemoFormModule
-      ],
-      declarations: [
-        AppComponent
-      ],
+      ]
     }).compileComponents();
   }));
 
@@ -26,10 +27,4 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it('should render title', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const compiled = fixture.nativeElement;
-    expect(compiled.querySelector('.content span').textContent).toContain('test-libraries app is running!');
-  });
 });
