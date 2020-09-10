@@ -1,4 +1,4 @@
-import { Component<% if(!!viewEncapsulation) { %>, ViewEncapsulation<% }%><% if(changeDetection !== 'Default') { %>, ChangeDetectionStrategy<% }%> } from '@angular/core';
+import { Component } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
 
 @Component({
@@ -6,13 +6,11 @@ import { FormBuilder } from '@angular/forms';
   template: `
     <%= indentTextContent(resolvedFiles.template, 4) %>
   `,<% } else { %>
-  templateUrl: './<%= dasherize(name) %>.component.html',<% } if(inlineStyle) { %>
+  templateUrl: './<%= dasherize(name) %>.component.html',<% } %><% if(inlineStyle) { %>
   styles: [`
     <%= indentTextContent(resolvedFiles.stylesheet, 4) %>
   `]<% } else { %>
-  styleUrls: ['./<%= dasherize(name) %>.component.<%= style %>']<% } %><% if(!!viewEncapsulation) { %>,
-  encapsulation: ViewEncapsulation.<%= viewEncapsulation %><% } if (changeDetection !== 'Default') { %>,
-  changeDetection: ChangeDetectionStrategy.<%= changeDetection %><% } %>
+  styleUrls: ['./<%= dasherize(name) %>.component.<%= style %>']<% } %>
 })
 export class <%= classify(name) %>Component {
   loginForm = this.fb.group({
