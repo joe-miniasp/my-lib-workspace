@@ -5,11 +5,11 @@ import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 
 import { <%= classify(name) %>Component } from './<%= dasherize(name) %>.component';
 
-import { DemoFormModule } form 'demo-form';
+import { DemoFormModule } from 'demo-form';
 
 describe('<%= classify(name) %>Component', () => {
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [ <%= classify(name) %>Component ],
       imports: [
