@@ -11,6 +11,11 @@
       "factory": "./ng-generate/login-form/index#loginForm",
       "schema": "./ng-generate/login-form/schema.json",
       "aliases": ["login-form"]
+    },
+    "hello":{
+      "description": "Create a hello.ts",
+      "factory": "./ng-generate/hello/index#hello",
+      "schema": "./ng-generate/hello/schema.json"
     }
   }
 }
