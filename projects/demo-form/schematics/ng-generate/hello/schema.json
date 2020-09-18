@@ -1,0 +1,9 @@
+{
+  "$schema": "http://json-schema.org/schema",
+  "id": "hello",
+  "title": "example",
+  "type": "object",
+  "description": "creat a hello.ts",
+  "properties": {},
+  "required": []
+}

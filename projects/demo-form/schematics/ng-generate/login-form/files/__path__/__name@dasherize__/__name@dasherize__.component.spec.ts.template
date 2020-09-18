@@ -1,0 +1,29 @@
+
+import { TestBed , waitForAsync } from '@angular/core/testing';
+import { ReactiveFormsModule } from '@angular/forms';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+
+import { <%= classify(name) %>Component } from './<%= dasherize(name) %>.component';
+
+import { DemoFormModule } from 'demo-form';
+
+describe('<%= classify(name) %>Component', () => {
+
+  beforeEach(waitForAsync(() => {
+    TestBed.configureTestingModule({
+      declarations: [ <%= classify(name) %>Component ],
+      imports: [
+        NoopAnimationsModule,
+        ReactiveFormsModule,
+        DemoFormModule
+      ]
+    }).compileComponents();
+  }));
+
+  it('should create the app', () => {
+    const fixture = TestBed.createComponent(<%= classify(name) %>Component);
+    const app = fixture.componentInstance;
+    expect(app).toBeTruthy();
+  });
+
+});

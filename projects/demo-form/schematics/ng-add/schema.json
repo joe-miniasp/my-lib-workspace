@@ -1,0 +1,10 @@
+{
+  "$schema": "http://json-schema.org/schema",
+  "id": "app-ng-add",
+  "title": "ng-add schematic",
+  "type": "object",
+  "description": "add ngx-validators and import ReactiveFormsModule",
+  "properties": {
+  },
+  "required": []
+}
