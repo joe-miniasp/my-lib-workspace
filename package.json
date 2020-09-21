@@ -16,7 +16,7 @@
     "lib:publish": "npm run lib:build:all && npm publish ./dist/demo-form",
     "lib:schematics:build": "tsc -p ./projects/demo-form/tsconfig.schematics.json",
     "lib:schematics:build:prod": "tsc -p ./projects/demo-form/tsconfig.schematics.prod.json",
-    "lib:schematics:copy:collection": "cd ./projects/demo-form && cpy schematics/collection.json ../../dist/demo-form/schematics/collection.json",
+    "lib:schematics:copy:collection": "cd ./projects/demo-form && cpy schematics/collection.json ../../dist/demo-form/schematics",
     "lib:schematics:copy:ng-add:schemas": "cd ./projects/demo-form && cpy --parents schematics/*/schema.json ../../dist/demo-form/",
     "lib:schematics:postbuild:ng-add": "npm run lib:schematics:copy:ng-add:schemas && npm run lib:schematics:copy:collection",
     "lib:schematics:copy:ng-generate:schemas": "cd ./projects/demo-form && cpy --parents schematics/*/*/schema.json ../../dist/demo-form/",
