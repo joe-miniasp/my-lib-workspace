@@ -12,12 +12,6 @@ export function loginForm(options: any): Rule {
       {
         ...options,
         getVersion,
-      },
-      {
-        template:
-          './__path__/__name@dasherize__/__name@dasherize__.component.html.template',
-        stylesheet:
-          './__path__/__name@dasherize__/__name@dasherize__.component.__style__.template',
       }
     ),
   ]);

@@ -2,19 +2,13 @@ import { Component } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
 
 @Component({
-  selector: '<%= selector %>',<% if(inlineTemplate) { %>
-  template: `
-    <%= indentTextContent(resolvedFiles.template, 4) %>
-  `,<% } else { %>
-  templateUrl: './<%= dasherize(name) %>.component.html',<% } %><% if(inlineStyle) { %>
-  styles: [`
-    <%= indentTextContent(resolvedFiles.stylesheet, 4) %>
-  `]<% } else { %>
-  styleUrls: ['./<%= dasherize(name) %>.component.<%= style %>']<% } %>
+  selector: '<%= selector %>',
+  templateUrl: './<%= dasherize(name) %>.component.html',
+  styleUrls: ['./<%= dasherize(name) %>.component.<%= style %>']
 })
-export class <%= classify(name) %>Component {
+export class <%= classify(name) %>Component {<% if(addVersion) { %>
 
-  version = '<%=getVersion()%>';
+  version = '<%=getVersion()%>';<% } %>
 
   loginForm = this.fb.group({
     account: '',
