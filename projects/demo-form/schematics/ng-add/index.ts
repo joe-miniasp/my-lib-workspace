@@ -18,17 +18,7 @@ import { Schema } from './schema';
 
 // Just return the tree
 export default function ngAdd(options: Schema): Rule {
-
   return (tree: Tree, context: SchematicContext) => {
-    // 取得 angular.json 內容
-    const workspace = getWorkspace(tree);
-
-    // 取得 angular.json projects 的 其中一個 project
-    const project = getProjectFromWorkspace(
-      workspace,
-      options.project || workspace.defaultProject
-    ) as WorkspaceProject;
-
     // 建立個人資料 user-info
     const userInfo =
       '開發人員 ' + options.name + ' 隸屬於 ' + options.department;
@@ -37,6 +27,14 @@ export default function ngAdd(options: Schema): Rule {
     tree.exists('user-info.txt')
       ? tree.overwrite('user-info.txt', userInfo)
       : tree.create('user-info.txt', userInfo);
+
+    // 取得 angular.json 內容
+    const workspace = getWorkspace(tree);
+    // 取得 angular.json projects 的 其中一個 project
+    const project = getProjectFromWorkspace(
+      workspace,
+      options.project || workspace.defaultProject
+    ) as WorkspaceProject;
 
     // import DemoFormModule 到 AppModule
     addModuleImportToRootModule(tree, 'DemoFormModule', 'demo-form', project);
@@ -48,10 +46,9 @@ export default function ngAdd(options: Schema): Rule {
         version: '5.2.1',
         name: 'ngx-validators',
       });
+      // 執行套件安裝
+      context.addTask(new NodePackageInstallTask());
     }
-
-    // 執行套件安裝
-    context.addTask(new NodePackageInstallTask());
 
     // 是否 import ReactiveFormsModule 到 AppModule
     if (options.isImportReactiveForms) {
