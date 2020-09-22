@@ -51,7 +51,7 @@ export default function ngAdd(options: Schema): Rule {
     }
 
     // 執行套件安裝
-    context.addTask(new NodePackageInstallTask(), []);
+    context.addTask(new NodePackageInstallTask());
 
     // 是否 import ReactiveFormsModule 到 AppModule
     if (options.isImportReactiveForms) {
