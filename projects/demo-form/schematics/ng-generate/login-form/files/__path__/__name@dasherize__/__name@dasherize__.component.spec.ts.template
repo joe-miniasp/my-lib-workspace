@@ -11,7 +11,9 @@ describe('<%= classify(name) %>Component', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [ <%= classify(name) %>Component ],
+      declarations: [
+        <%= classify(name) %>Component
+      ],
       imports: [
         NoopAnimationsModule,
         ReactiveFormsModule,
