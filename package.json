@@ -23,9 +23,9 @@
     "lib:schematics:copy:ng-generate:files": "cd ./projects/demo-form && cpy --parents schematics/**/**/files/** ../../dist/demo-form/ -r",
     "lib:schematics:postbuild:ng-generate": "npm run lib:schematics:copy:ng-generate:schemas && npm run lib:schematics:copy:ng-generate:files && npm run lib:schematics:copy:collection",
     "lib:schematics:postbuild:all": "npm run lib:schematics:postbuild:ng-add && npm run lib:schematics:postbuild:ng-generate",
-    "lib:schematics:test:ng-add": "npm run lib:build && npm run lib:schematics:build && npm run lib:schematics:postbuild:ng-add && schematics ./dist/demo-form:ng-add --project=test-schematics --dry-run=true",
-    "lib:schematics:test:ng-generate:hello": "npm run lib:build && npm run lib:schematics:build && npm run lib:schematics:postbuild:ng-generate && schematics ./dist/demo-form:hello --project=test-schematics --dry-run=true",
-    "lib:schematics:test:ng-generate:loginForm": "npm run lib:build && npm run lib:schematics:build && npm run lib:schematics:postbuild:ng-generate && schematics ./dist/demo-form:loginForm --project=test-schematics --dry-run=true"
+    "lib:schematics:test:ng-add": "npm run lib:build && npm run lib:schematics:build && npm run lib:schematics:postbuild:ng-add && schematics ./dist/demo-form:ng-add --project=test-schematics",
+    "lib:schematics:test:ng-generate:hello": "npm run lib:build && npm run lib:schematics:build && npm run lib:schematics:postbuild:ng-generate && schematics ./dist/demo-form:hello --project=test-schematics",
+    "lib:schematics:test:ng-generate:loginForm": "npm run lib:build && npm run lib:schematics:build && npm run lib:schematics:postbuild:ng-generate && schematics ./dist/demo-form:loginForm --project=test-schematics"
   },
   "private": true,
   "dependencies": {
